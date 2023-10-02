@@ -59,7 +59,7 @@ const Home = () => {
                 <div className=''>
                     <LeftSidebar />
                 </div>
-                <div className='border-2 col-span-2'>
+                <div className='col-span-2'>
                     <NewsPart />
                 </div>
                 <div className=''>
