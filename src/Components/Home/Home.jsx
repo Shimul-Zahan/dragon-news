@@ -1,12 +1,13 @@
 import React from 'react'
 import Header from '../Shared/Header'
 import Marquee from "react-fast-marquee";
-import { Link } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import LeftSidebar from '../Shared/LeftSidebar';
 import NewsPart from '../Shared/NewsPart';
 import RightSidebar from '../Shared/RightSidebar';
 
 const Home = () => {
+
     return (
         <div>
             <Header />
