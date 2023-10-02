@@ -1,19 +1,40 @@
 import React from 'react'
+import { FcGoogle } from 'react-icons/fc';
+import { BsGithub } from 'react-icons/bs';
+import { FaFacebook } from 'react-icons/fa';
+import { AiFillTwitterCircle } from 'react-icons/ai';
+import { BsInstagram } from 'react-icons/bs';
+// FcGoogle
 
 const RightSidebar = () => {
   return (
     <div className='mb-10'>
       <h1 className="text-lg font-bold mb-5">Login With</h1>
       <div className='space-y-3'>
-        <h1 className="input flex items-center justify-center text-lg text-blue-500 font-medium border-blue-500">Login With Google</h1>
-        <h1 className="input flex items-center justify-center text-lg text-[#171717] font-medium border-[#171717]">Login With Github</h1>
+        <h1 className="input flex items-center justify-center text-lg text-blue-500 font-medium border-blue-500">
+          <span className='mr-2 text-2xl'>
+            <FcGoogle/>
+          </span>Login With Google</h1>
+        <h1 className="input flex items-center justify-center text-lg text-[#171717] font-medium border-[#171717]">
+          <span className='mr-2 text-2xl'>
+            <BsGithub />
+          </span>Login With Github</h1>
       </div>
 
-      <div className='mt-20 font-medium text-[#b9b8b8]'>
+      <div className='mt-20 font-medium text-[#4f4f4f]'>
         <h1 className="text-2xl font-bold mb-5">Find Us On</h1>
-        <h1 className="py-5 rounded-sm flex items-center  pl-10 text-lg border">Fecebook</h1>
-        <h1 className="py-5 rounded-sm flex items-center  pl-10 text-lg border">Twitter</h1>
-        <h1 className="py-5 rounded-sm flex items-center  pl-10 text-lg border">Instragram</h1>
+        <h1 className="py-5 rounded-sm flex items-center  pl-5 text-lg border">
+          <span className='mr-2 text-2xl'>
+            <FaFacebook />
+          </span>Fecebook</h1>
+        <h1 className="py-5 rounded-sm flex items-center  pl-5 text-lg border">
+          <span className='mr-2 text-2xl'>
+            <AiFillTwitterCircle />
+          </span>Twitter</h1>
+        <h1 className="py-5 rounded-sm flex items-center  pl-5 text-lg border">
+          <span className='mr-2 text-2xl'>
+            <BsInstagram />
+          </span>Instragram</h1>
       </div>
 
       <div className='mt-20 font-medium bg-[#e4e0e0]'>
