@@ -1,24 +1,42 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { FcGoogle } from 'react-icons/fc';
 import { BsGithub } from 'react-icons/bs';
 import { FaFacebook } from 'react-icons/fa';
 import { AiFillTwitterCircle } from 'react-icons/ai';
 import { BsInstagram } from 'react-icons/bs';
+import { Link, useNavigate } from 'react-router-dom';
+import { MyContext } from '../../Context/ContextAuth';
 // FcGoogle
 
 const RightSidebar = () => {
+  const navigate = useNavigate();
+  const { googleSignIn } = useContext(MyContext);
+  const googleLogIn = () => {
+    googleSignIn().then(res => {
+      // console.log(res.user);
+      navigate('/');
+    }).catch(err => {
+      alert('Something went wrong');
+    })
+  }
+
+
   return (
     <div className='mb-10'>
       <h1 className="text-lg font-bold mb-5">Login With</h1>
       <div className='space-y-3'>
-        <h1 className="input flex items-center justify-center text-lg text-blue-500 font-medium border-blue-500">
-          <span className='mr-2 text-2xl'>
-            <FcGoogle/>
-          </span>Login With Google</h1>
+        <h1 onClick={googleLogIn} className="input flex items-center justify-center text-lg text-blue-500 font-medium border-blue-500">
+            <span className='mr-2 text-2xl'>
+              <FcGoogle />
+          </span>
+          Login With Google
+        </h1>
         <h1 className="input flex items-center justify-center text-lg text-[#171717] font-medium border-[#171717]">
           <span className='mr-2 text-2xl'>
             <BsGithub />
-          </span>Login With Github</h1>
+          </span>
+          Login With Github
+        </h1>
       </div>
 
       <div className='mt-20 font-medium text-[#4f4f4f]'>
