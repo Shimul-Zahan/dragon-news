@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from '../Shared/Navbar';
 import { MyContext } from '../../Context/ContextAuth';
 
@@ -7,6 +7,7 @@ const Login = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const { signIn } = useContext(MyContext);
+    const location = useLocation();
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -14,7 +15,8 @@ const Login = () => {
         const password = e.target.password.value;
 
         signIn(email, password).then(res => {
-            navigate('/')
+            // console.log(res.user);
+            navigate(location?.state ? location.state : '/')
         }).catch(err => {
             setError(err.message);
         })

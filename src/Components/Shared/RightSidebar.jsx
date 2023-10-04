@@ -10,7 +10,8 @@ import { MyContext } from '../../Context/ContextAuth';
 
 const RightSidebar = () => {
   const navigate = useNavigate();
-  const { googleSignIn } = useContext(MyContext);
+  const { googleSignIn, gitHubAuth } = useContext(MyContext);
+
   const googleLogIn = () => {
     googleSignIn().then(res => {
       // console.log(res.user);
@@ -20,18 +21,26 @@ const RightSidebar = () => {
     })
   }
 
+  const githubLogin = () => {
+    gitHubAuth().then(res => {
+      console.log(res.user);
+    }).catch(err => {
+      console.log(err.message);
+    })
+  }
+
 
   return (
     <div className='mb-10'>
       <h1 className="text-lg font-bold mb-5">Login With</h1>
       <div className='space-y-3'>
-        <h1 onClick={googleLogIn} className="input flex items-center justify-center text-lg text-blue-500 font-medium border-blue-500">
-            <span className='mr-2 text-2xl'>
-              <FcGoogle />
+        <h1 onClick={googleLogIn} className="input cursor-pointer flex items-center justify-center text-lg text-blue-500 font-medium border-blue-500">
+          <span className='mr-2 text-2xl'>
+            <FcGoogle />
           </span>
           Login With Google
         </h1>
-        <h1 className="input flex items-center justify-center text-lg text-[#171717] font-medium border-[#171717]">
+        <h1 onClick={githubLogin} className="input flex cursor-pointer items-center justify-center text-lg text-[#171717] font-medium border-[#171717]">
           <span className='mr-2 text-2xl'>
             <BsGithub />
           </span>
@@ -58,7 +67,7 @@ const RightSidebar = () => {
       <div className='mt-20 font-medium bg-[#e4e0e0]'>
         <h1 className="text-2xl font-bold mb-5 p-5">Kids Zone</h1>
         <div className='space-y-6'>
-          <img src="/assets/qZone1.png" alt="" className='w-full'/>
+          <img src="/assets/qZone1.png" alt="" className='w-full' />
           <img src="/assets/qZone2.png" alt="" className='w-full' />
           <img src="/assets/qZone3.png" alt="" className='w-full' />
         </div>

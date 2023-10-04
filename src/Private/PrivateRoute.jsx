@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
 import { MyContext } from '../Context/ContextAuth'
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
     const { user, isloading } = useContext(MyContext);
+    const location = useLocation();
+
+    console.log(location)
 
     if (isloading) {
         alert('isloading true');
@@ -12,7 +15,7 @@ const PrivateRoute = ({ children }) => {
         return children;
     }
     return (
-        <Navigate to='/login'></Navigate>
+        <Navigate state={location.pathname} to='/login'></Navigate>
     )
 }
 

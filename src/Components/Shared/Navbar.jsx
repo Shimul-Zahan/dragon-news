@@ -10,7 +10,7 @@ const Navbar = () => {
     // console.log(user)
     const logOut = () => {
         signOut(auth).then(res => {
-            isLoading(true);
+            isLoading(true)
             alert('Successfully sing out')
         }).catch(err => {
             console.log(err.message);
