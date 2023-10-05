@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { MyContext } from '../../Context/ContextAuth';
 
 const DynamicCategory = ({ catagory }) => {
 
     const { name, id } = catagory;
+    const { setNewsCatagory } = useContext(MyContext);
+    // console.log(setNewsCatagory)
 
     const HandleCategory = () => {
         console.log("clicked")
@@ -11,7 +14,7 @@ const DynamicCategory = ({ catagory }) => {
 
     return (
         <div>
-            <Link onClick={HandleCategory} className="text-lg">{name}</Link>
+            <Link onClick={() => setNewsCatagory(id)} className="text-lg">{name}</Link>
         </div>
     )
 }

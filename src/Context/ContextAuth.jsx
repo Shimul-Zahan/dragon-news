@@ -9,6 +9,8 @@ const ContextAuth = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider()
+    const [newsCatagory, setNewsCatagory] = useState('1');
+
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     }
@@ -34,6 +36,8 @@ const ContextAuth = ({ children }) => {
         })
     }, [])
 
+    // console.log(newsCatagory);
+
 
 
     const contextElement = {
@@ -43,6 +47,8 @@ const ContextAuth = ({ children }) => {
         googleSignIn,
         isLoading,
         gitHubAuth,
+        setNewsCatagory,
+        newsCatagory
     }
 
     return (

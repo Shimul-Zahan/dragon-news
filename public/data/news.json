@@ -44,7 +44,7 @@
         "is_todays_pick": false,
         "is_trending": true
       },
-      "category_id": "1",
+      "category_id": "0",
       "rating": { "number": 4.8, "badge": "Excellent" },
       "total_view": 400,
       "title": "Tucker Carlson Swears Vladimir Putin Is Winning The War In Ukraine",
@@ -102,7 +102,7 @@
         "is_todays_pick": false,
         "is_trending": false
       },
-      "category_id": "1",
+      "category_id": "0",
       "rating": { "number": 4.5, "badge": "Excellent" },
       "total_view": 980,
       "title": "Joe Biden announces $3 billion in Ukraine weapons aid",
@@ -240,7 +240,7 @@
         "is_todays_pick": false,
         "is_trending": true
       },
-      "category_id": "2",
+      "category_id": "6",
       "rating": { "number": 4.5, "badge": "Excellent" },
       "total_view": 700,
       "title": "Halo, GTA Vice City Actor Directing Movie About Hunter Biden",
