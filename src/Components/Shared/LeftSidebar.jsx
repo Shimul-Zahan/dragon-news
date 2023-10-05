@@ -1,9 +1,24 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { SlCalender } from 'react-icons/sl';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import DynamicCategory from './DynamicCategory';
 // SlCalender
 
 const LeftSidebar = () => {
+
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetch('/data/categories.json')
+      .then(res => res.json())
+      .then(data => {
+        setCategories(data);
+    })
+  }, [])
+
+
   return (
     <div className='w-full pb-10'>
       <h1 className="text-lg mb-5 font-bold text-black">All Catagory</h1>
@@ -11,14 +26,9 @@ const LeftSidebar = () => {
         <Link to='' className="text-lg w-full font-bold text-black">National News</Link>
       </div>
       <div className='flex flex-col pl-20 w-full space-y-5 text-[#706F6F] font-medium'>
-        <Link to='' className="text-lg">Breaking News</Link>
-        <Link to='' className="text-lg">Regular News</Link>
-        <Link to='' className="text-lg">International News</Link>
-        <Link to='' className="text-lg">Sports</Link>
-        <Link to='' className="text-lg">Entertainment</Link>
-        <Link to='' className="text-lg">Culture</Link>
-        <Link to='' className="text-lg">Arts</Link>
-        <Link to='' className="text-lg">All News</Link>
+        {
+          categories?.map(catagory => <DynamicCategory catagory={ catagory } key={catagory.id} />)
+        }
       </div>
 
       <div className='pt-10 space-y-4'>
