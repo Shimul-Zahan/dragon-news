@@ -9,7 +9,7 @@ const ContextAuth = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
     const gitHubProvider = new GithubAuthProvider()
-    const [newsCatagory, setNewsCatagory] = useState('1');
+    const [newsCatagory, setNewsCatagory] = useState('0');
 
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
